@@ -1,18 +1,18 @@
-﻿using XamarinFaceBot.Modelos;
-using Microsoft.Bot.Connector.DirectLine;
+﻿using Microsoft.Bot.Connector.DirectLine;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using XamarinFaceBot.Helpers;
+using XamarinFaceBot.Modelos;
 
 namespace XamarinFaceBot.Servicios
 {
-    public class BotConnection
+    public class ServicioBotDirectLine
     {
         public DirectLineClient ClienteDL;
         public Conversation Conversacion;
         public ChannelAccount Cuenta;
 
-        public BotConnection(string nombre)
+        public ServicioBotDirectLine(string nombre)
         {
             var tokenResponse = new DirectLineClient(Constantes.DirectLineSecret).Tokens.GenerateTokenForNewConversation();
 
