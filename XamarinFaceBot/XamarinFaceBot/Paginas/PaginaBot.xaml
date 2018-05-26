@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinFaceBot.Paginas.PaginaBot">
+    <ContentPage.Content>
+        <StackLayout Spacing="10" Padding="10" HorizontalOptions="Fill" VerticalOptions="Fill" Orientation="Vertical">
+            <ListView x:Name="lsvMensajes" VerticalOptions="StartAndExpand" HorizontalOptions="Fill" HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <Label VerticalOptions="StartAndExpand" HorizontalOptions="Fill" HorizontalTextAlignment="{Binding LblMensajeTextAlignment}" Text="{Binding Texto}" FontSize="Large"/>
+                                <Label VerticalOptions="End" HorizontalOptions="Fill" HorizontalTextAlignment="{Binding LblEmisorTextAlignment}" TextColor="Accent" Text="{Binding Emisor}" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Entry x:Name="txtMensaje" Placeholder="Escribe un mensaje" HorizontalTextAlignment="End" Margin="10" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="btnEnviar" Text="Enviar" WidthRequest="100" Clicked="btnEnviar_Clicked" Margin="10"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
